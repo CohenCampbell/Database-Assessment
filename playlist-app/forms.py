@@ -1,20 +1,23 @@
 """Forms for playlist app."""
 
-from wtforms import SelectField
+from wtforms import SelectField, StringField
 from flask_wtf import FlaskForm
+from wtforms.widgets import TextArea
 
 
 class PlaylistForm(FlaskForm):
-    """Form for adding playlists."""
+    """Form for adding playlists.""" 
 
-    # Add the necessary code to use this form
+    playlist_name = StringField("Playlist Name")
 
+    description = StringField("Playlist Description", widget=TextArea())
 
 class SongForm(FlaskForm):
     """Form for adding songs."""
 
-    # Add the necessary code to use this form
+    song_name = StringField("Song Name")
 
+    artist = StringField("Song Artist")
 
 # DO NOT MODIFY THIS FORM - EVERYTHING YOU NEED IS HERE
 class NewSongForPlaylistForm(FlaskForm):

@@ -10,12 +10,18 @@
 </div>
 
 
-<div class="text-danger">
-  SHOW ALL OF THE SONGS IN THIS PLAYLIST HERE
-</div>
+<ul>
+  {%for song in songs%}
+  <li>
+    <a href="/songs/{{song.song_id}}">{{song.title}}</a>
+    <br>
+    by: {{song.artist}}
+  </li>
+  {%endfor%}
+</ul>
 
 <p>
-  <a class="btn btn-primary" href="/playlists/{{ playlist.id }}/add-song">
+  <a class="btn btn-primary" href="/playlists/{{ playlist.playlist_id }}/add-song">
     Add Song To Playlist
   </a>
 </p>
